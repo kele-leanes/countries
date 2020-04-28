@@ -5,9 +5,27 @@ const searchInput = document.getElementsByTagName('input')[0];
 const filterBtn = document.querySelector('.filter');
 const filterSelector = document.querySelector('.filter-selector');
 const selectRegion = document.querySelectorAll('.select-region');
+const themeBtn = document.querySelector('.theme-switcher');
+
+if(window.localStorage.getItem('theme') === 'dark') {
+    toggleTheme();
+};
 
 filterBtn.addEventListener('click', toggleFilters);
 selectRegion.forEach(elem => elem.addEventListener('click', getRegion));
+
+themeBtn.addEventListener('click', toggleTheme);
+
+function toggleTheme() {
+    document.getElementsByTagName('body')[0].classList.toggle('dark');
+    if(themeBtn.textContent == 'Dark Mode') {
+        themeBtn.innerHTML = `<i class="far fa-sun"></i>Light Mode`;
+        window.localStorage.setItem('theme', 'dark');
+    } else {
+        themeBtn.innerHTML = `<i class="far fa-moon"></i>Dark Mode`;
+        window.localStorage.setItem('theme', 'light');
+    }
+}
 
 function getRegion() {
     let region = event.currentTarget.dataset.id;
@@ -33,8 +51,6 @@ async function getRegionCountries(region) {
         </div>`
     }));
 }
-
-
 
 function toggleFilters() {
     filterSelector.classList.toggle('active');

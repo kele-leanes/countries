@@ -1,8 +1,6 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 14px;
 }
 
 a {
@@ -16,7 +14,9 @@ a:visited {
 
 body {
     background-color: hsl(0, 0%, 98%);
-    color: hsl(200, 15%, 8%)
+    color: hsl(200, 15%, 8%);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
 }
 
 header {
@@ -32,7 +32,7 @@ header {
 }
 
 .theme-switcher {
-    width: 90px;
+    width: 95px;
 }
 
 .theme-switcher i {
@@ -41,6 +41,7 @@ header {
 
 .title h1 {
     font-weight: 800;
+    font-size: 14px;
 }
 
 .search-bar {
@@ -112,14 +113,30 @@ header {
     display: flex;
 }
 
+.filter-selector .select-region {
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.filter-selector .select-region:hover {
+    transform: scale(1.1);
+}
+
 .back-btn {
     background-color: white;
     border-radius: 7px;
     box-shadow: 0 3px 10px rgba(0,0,0,.1);
     width: 130px;
     height: 45px;
-    padding: 0 55px;
+    padding: 0 20px;
     line-height: 45px;
+    position: absolute;
+    top: 20px;
+}
+
+.back-btn .fa-arrow-left {
+    margin-right: 25px;
+    opacity: 0.3;
 }
 
 .main-content {
@@ -133,7 +150,6 @@ header {
 
 .card {
     width: 265px;
-    height: 335px;
     box-shadow: 0 3px 10px rgba(0,0,0,.1);
     margin-bottom: 40px;
     transition: transform .3s;
@@ -149,7 +165,6 @@ header {
 }
 
 .flag img {
-    height: 100%;
     width: 100%;
 }
 
@@ -165,14 +180,13 @@ header {
 .data-wrapper h3 {
     font-size: 16px;
     font-weight: 800;
-    margin-bottom: 18px;
+    margin: 18px 0;
 }
 
 .country-data {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-bottom: 50px;
 }
 
 .country-data span {
@@ -181,7 +195,7 @@ header {
 
 .border-countries {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -189,12 +203,12 @@ header {
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 3px 10px rgba(0,0,0,.1);
-    width: 32%;
+    width: 30%;
     height: 30px;
-    padding: 0 15px;
+    padding: 0 5px;
     line-height: 30px;
     text-align: center;
-    margin-bottom: 5px;
+    margin: 5px 3px;
 }
 
 .data-wrapper h4 {

@@ -1,5 +1,12 @@
 let country = window.localStorage.getItem('clicked');
 const main = document.querySelector('.main-content');
+const themeBtn = document.querySelector('.theme-switcher');
+
+if(window.localStorage.getItem('theme') === 'dark') {
+    toggleTheme();
+};
+
+themeBtn.addEventListener('click', toggleTheme);
 
 let fechCountry;
 
@@ -43,4 +50,15 @@ function renderInfo(data) {
     languages.forEach(elem => spanLanguages.innerHTML += `<span> ${elem.name}</span>`);
     borders.forEach(borders => bordersCountries.innerHTML += 
         `<div class="countries">${borders}</div>`);
+}
+
+function toggleTheme() {
+    document.getElementsByTagName('body')[0].classList.toggle('dark');
+    if(themeBtn.textContent == 'Dark Mode') {
+        themeBtn.innerHTML = `<i class="far fa-sun"></i>Light Mode`;
+        window.localStorage.setItem('theme', 'dark');
+    } else {
+        themeBtn.innerHTML = `<i class="far fa-moon"></i>Dark Mode`;
+        window.localStorage.setItem('theme', 'light');
+    }
 }

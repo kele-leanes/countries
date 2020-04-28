@@ -1,0 +1,16 @@
+.dark {
+    background-color: hsl(207, 26%, 17%);
+    color: hsl(0, 0%, 100%);
+}
+
+.dark header, .dark .card, .dark .filter-selector, .dark .filter, .dark .search-bar input, .dark .back-btn, .dark .countries {
+    background-color: hsl(209, 23%, 22%);
+}
+
+.dark a {
+    color: hsl(0, 0%, 100%);
+}
+
+.dark a:visited {
+    color: hsl(0, 0%, 100%);
+}
