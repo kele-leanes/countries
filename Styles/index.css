@@ -3,6 +3,8 @@
     box-sizing: border-box;
 }
 
+
+
 a {
     text-decoration: none;
     color: hsl(200, 15%, 8%);
@@ -33,6 +35,7 @@ header {
 
 .theme-switcher {
     width: 95px;
+    cursor: pointer;
 }
 
 .theme-switcher i {
@@ -68,12 +71,16 @@ header {
 
 .search-bar input {
     width: 100%;
+    max-width: 480px;
     height: 45px;
     box-shadow: 0 3px 10px rgba(0,0,0,.1);
     border: none;
     border-radius: 7px;
     padding-left: 60px;
     cursor: text;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .search-bar input:focus ~ .fa-search {
@@ -88,6 +95,7 @@ header {
     height: 45px;
     padding-left: 25px;
     line-height: 45px;
+    cursor: pointer;
 }
 
 .filter .fa-caret-down{
@@ -107,6 +115,7 @@ header {
     padding: 20px 25px;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 999;
 }
 
 .filter-selector.active {
@@ -160,8 +169,8 @@ header {
 }
 
 .flag {
-    height: 160px;
     width: 100%;
+    max-width: 560px;
 }
 
 .flag img {
@@ -173,12 +182,17 @@ header {
     width: 100%;
 }
 
+.country-info-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .data-wrapper.detail {
     padding: 30px 0;
 }
 
 .data-wrapper h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 800;
     margin: 18px 0;
 }
@@ -187,6 +201,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .country-data span {
@@ -204,6 +219,7 @@ header {
     border-radius: 4px;
     box-shadow: 0 3px 10px rgba(0,0,0,.1);
     width: 30%;
+    max-width: 100px;
     height: 30px;
     padding: 0 5px;
     line-height: 30px;
@@ -213,4 +229,75 @@ header {
 
 .data-wrapper h4 {
     margin-bottom: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 16px; 
+    }
+
+    header {
+        padding: 0 80px;
+    }
+
+    .title h1 {
+        font-size: 16px;
+    }
+
+    .theme-switcher {
+        width: 105px;
+    }
+    
+    .search-bar {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 80px;
+    }
+    
+    .search-bar input {
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .search-bar .fa-search {
+        top: 57px;
+        left: 107px;
+    }
+
+    .filter {
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .filter .fa-caret-down {
+        margin-left: 35px;
+    }
+
+    .filter-selector {
+        top: 100px;
+        right: 80px;
+    }
+
+    .main-content {
+        padding: 0 80px;
+    }
+
+    .card .flag {
+        width: 100%;
+    }
+
+    .flag {
+        width: 45%;
+    }
+
+    .data-wrapper.detail {
+        width: 45%;
+        max-width: 560px;
+    }
+
+    .country-info-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }
