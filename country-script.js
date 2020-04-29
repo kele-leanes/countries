@@ -21,20 +21,22 @@ async function getSearch(name) {
 
 function renderInfo(data) {
     main.innerHTML = 
-    `<div class="flag"><img src="${data.flag}" alt=""></div>
+    `<div class="flag"><img src="${data.flag}" alt=""/></div>
         <div class="data-wrapper detail">
             <h3>${data.name}</h3>
-        <div class="country-data">
-            <span><b>Native Name:</b> ${data.nativeName}</span>
-            <span><b>Population:</b> ${new Intl.NumberFormat().format(data.population)}</span>
-            <span><b>Region:</b> ${data.region}</span>
-            <span><b>Sub Region:</b> ${data.subregion}</span>
-            <span><b>Capital:</b> ${data.capital}</span>
-        </div>
-        <div class="country-data">
-            <span><b>Top Level Domain:</b> ${data.topLevelDomain}</span>
-            <div id="currencies"><b>Currencies:</b></div>
-            <div id="languages"><b>Languages:</b></div>
+        <div class="country-info-wrapper">
+            <div class="country-data">
+                <span><b>Native Name:</b> ${data.nativeName}</span>
+                <span><b>Population:</b> ${new Intl.NumberFormat().format(data.population)}</span>
+                <span><b>Region:</b> ${data.region}</span>
+                <span><b>Sub Region:</b> ${data.subregion}</span>
+                <span><b>Capital:</b> ${data.capital}</span>
+            </div>
+            <div class="country-data">
+                <span><b>Top Level Domain:</b> ${data.topLevelDomain}</span>
+                <div id="currencies"><b>Currencies:</b></div>
+                <div id="languages"><b>Languages:</b></div>
+            </div>
         </div>
         <h4>Border Countries:</h4>
         <div class="border-countries"></div>
